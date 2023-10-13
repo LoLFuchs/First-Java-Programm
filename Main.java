@@ -25,19 +25,19 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner newObj = new Scanner(System.in);
+        try (Scanner newObj = new Scanner(System.in)) {
+            System.out.println("enter number 1");
+            Integer ZahlEins = newObj.nextInt();
 
-        System.out.println("enter number 1");
-        Integer ZahlEins = newObj.nextInt();
+            System.out.println("enter number 2");
+            Integer ZahlZwei = newObj.nextInt();
 
-        System.out.println("enter number 2");
-        Integer ZahlZwei = newObj.nextInt();
+            System.out.println("enter operation (+ - / *)");
+            String Operation = newObj.next();
 
-        System.out.println("enter operation (+ - / *)");
-        String Operation = newObj.next();
-
-        Main obj = new Main();
-        Integer result = obj.math(ZahlEins, ZahlZwei, Operation);
-        System.out.println("Result: " + result);
+            Main obj = new Main();
+            Integer result = obj.math(ZahlEins, ZahlZwei, Operation);
+            System.out.println("Result: " + result);
+        }
     }
 }
